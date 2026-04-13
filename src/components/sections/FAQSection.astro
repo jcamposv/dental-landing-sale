@@ -1,0 +1,77 @@
+---
+const faqs = [
+  {
+    question: "¿Qué incluye exactamente por $295 USD?",
+    answer: "Incluye: página web completa con el diseño que elijas o uno personalizado, tu información (nombre, servicios, fotos, colores), integración WhatsApp, SEO básico, y una revisión de cambios. Básicamente todo lo que necesitas para tener presencia profesional online.",
+  },
+  {
+    question: "¿Cuándo se realiza el pago?",
+    answer: "El pago de $295 USD se realiza una sola vez al momento de recibir tu página terminada. No cobramos por adelantado.",
+  },
+  {
+    question: "¿Cuánto tiempo tarda la entrega?",
+    answer: "72 horas desde que recibimos tu información completa (textos, fotos, datos de contacto). Si necesitas ayuda con las fotos o textos, te guiamos en el proceso.",
+  },
+  {
+    question: "¿Necesito saber de tecnología?",
+    answer: "No. Nosotros nos encargamos de todo: diseño, programación, hosting y configuración. Tú solo nos envías la información de tu clínica y nosotros hacemos el resto.",
+  },
+  {
+    question: "¿Puedo hacer cambios después?",
+    answer: "Incluimos 1 ronda de revisiones gratis. Cambios adicionales tienen un costo mínimo.",
+  },
+  {
+    question: "¿Puedo pedir un diseño completamente personalizado?",
+    answer: "Sí. Los 5 diseños que mostramos son ejemplos, pero podemos crear un diseño totalmente custom adaptado a la identidad de tu clínica por el mismo precio.",
+  },
+  {
+    question: "¿Qué pasa con el dominio?",
+    answer: "El dominio (ej: www.tuclinica.com) se compra por separado y cuesta aproximadamente $10-15 USD al año. Te ayudamos a comprarlo y configurarlo sin costo adicional.",
+  },
+  {
+    question: "¿Cuánto cuesta el hosting?",
+    answer: "Tu página se despliega en Vercel, una plataforma profesional utilizada por empresas como Meta y Uber. Actualmente ofrecen un plan gratuito (Hobby) que incluye 100GB de ancho de banda, CDN global y certificado HTTPS. Es más que suficiente para una clínica dental. Sin embargo, si en algún momento Vercel cambia sus planes, el costo del plan Pro es de $20 USD/mes. Queremos ser transparentes con eso. El único costo recurrente actual es el dominio (~$10-15 USD/año).",
+  },
+  {
+    question: "¿Hay algún pago mensual o anual?",
+    answer: "No. El pago de $295 USD es único. Lo único recurrente es la renovación del dominio que cuesta entre $10-15 USD al año. No hay mensualidades, no hay costos ocultos.",
+  },
+  {
+    question: "¿Cuándo y cómo se paga?",
+    answer: "Solo pagas cuando tu página web está terminada y estás 100% satisfecho con el resultado. Es un pago único de $295 USD. Sin anticipos, sin riesgos.",
+  },
+  {
+    question: "¿Funciona para cualquier país de Latinoamérica?",
+    answer: "Sí. Nuestras páginas están optimizadas para cualquier país de LATAM y cargan rápido desde México, Colombia, Argentina, Chile, Perú, Ecuador o cualquier otro país.",
+  },
+];
+---
+
+<section id="faq" class="py-20 sm:py-28 bg-white">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-animate>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-surface-dark">
+        Preguntas frecuentes
+      </h2>
+      <p class="mt-4 text-gray-600 text-lg">
+        Todo lo que necesitas saber antes de decidir.
+      </p>
+    </div>
+
+    <div class="space-y-4" data-animate>
+      {faqs.map((faq) => (
+        <details class="group bg-surface rounded-2xl border border-gray-100 overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer p-6 font-display font-semibold text-surface-dark hover:text-brand transition-colors list-none">
+            <span>{faq.question}</span>
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-45 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 leading-relaxed text-sm">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

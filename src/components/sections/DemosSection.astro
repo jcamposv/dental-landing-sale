@@ -1,0 +1,141 @@
+---
+import demo1Img from "../../assets/images/demo1.png";
+import demo2Img from "../../assets/images/demo2.png";
+import demo3Img from "../../assets/images/demo3.png";
+import demo4Img from "../../assets/images/demo4.png";
+import demo5Img from "../../assets/images/demo5.png";
+
+const demos = [
+  {
+    name: "Otto Dental",
+    style: "Clínica Premium",
+    description: "Diseño elegante para clínicas medianas y grandes. Incluye sección de especialistas, servicios con marquee animado y sección por audiencia (niños, adolescentes, adultos).",
+    ideal: "Clínicas con varios doctores",
+    color: "from-blue-500 to-indigo-600",
+    features: ["Marquee animado", "4 especialistas", "Sección por audiencia", "Trust badges"],
+    image: demo1Img,
+    demoUrl: "https://dental-1-omega.vercel.app/",
+  },
+  {
+    name: "Dra. Amelia Hart",
+    style: "Consultorio Privado",
+    description: "Diseño personal y sofisticado para dentistas independientes. Enfoque en la doctora, sus credenciales y atención uno a uno.",
+    ideal: "Dentistas independientes",
+    color: "from-violet-500 to-purple-600",
+    features: ["Perfil del doctor", "Estadísticas", "Consulta privada", "Credenciales"],
+    image: demo2Img,
+    demoUrl: "https://dental-2-three.vercel.app/",
+  },
+  {
+    name: "Dra. Agatha James",
+    style: "Estética y Cosmética",
+    description: "Diseño moderno con enfoque en estética dental. Incluye sección de educación, diplomas, FAQ interactivo y consulta gratis como gancho.",
+    ideal: "Especialistas en estética",
+    color: "from-emerald-500 to-teal-600",
+    features: ["FAQ interactivo", "Sección educación", "Diplomas", "Consulta gratis"],
+    image: demo3Img,
+    demoUrl: "https://dental-3-six.vercel.app/",
+  },
+  {
+    name: "DentaLife",
+    style: "Clínica Familiar",
+    description: "Diseño fresco y accesible para clínicas familiares. Grid de servicios, sección de doctor certificado y testimonios destacados.",
+    ideal: "Clínicas familiares",
+    color: "from-amber-500 to-orange-600",
+    features: ["Grid servicios", "Doctor certificado", "Por qué elegirnos", "Diseño accesible"],
+    image: demo4Img,
+    demoUrl: "https://dental-4-eta.vercel.app/",
+  },
+  {
+    name: "Crenter Dental",
+    style: "Clínica Moderna",
+    description: "Diseño corporativo moderno para clínicas con equipo de especialistas. Sección de equipo médico, estadísticas de confianza y servicios detallados.",
+    ideal: "Clínicas con equipo médico",
+    color: "from-cyan-500 to-blue-600",
+    features: ["Equipo médico", "Estadísticas", "Servicios detallados", "Newsletter"],
+    image: demo5Img,
+    demoUrl: "https://dental-5.vercel.app/",
+  },
+];
+---
+
+<section id="demos" class="py-20 sm:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+      <div class="inline-flex items-center gap-2 bg-brand/10 text-brand font-semibold text-sm px-4 py-1.5 rounded-full mb-4">
+        Diseños de Ejemplo + Custom
+      </div>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-surface-dark">
+        Elige un diseño o creamos uno a tu medida
+      </h2>
+      <p class="mt-4 text-gray-600 text-lg">
+        Puedes elegir uno de nuestros diseños de ejemplo o podemos crear uno completamente personalizado para tu clínica.
+      </p>
+    </div>
+
+    <div class="grid gap-8">
+      {demos.map((demo, i) => (
+        <div data-animate class="group relative bg-surface rounded-3xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Screenshot real -->
+            <div class="lg:w-1/2 p-6 flex items-center justify-center">
+              <div class="relative w-full rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                <div class="h-7 bg-gray-100 flex items-center gap-1.5 px-3 border-b border-gray-200">
+                  <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                  <div class="flex-1 mx-6">
+                    <div class="h-3.5 bg-white rounded-full max-w-[180px] mx-auto"></div>
+                  </div>
+                </div>
+                <img
+                  src={demo.image.src}
+                  alt={`Screenshot de ${demo.name}`}
+                  class="w-full h-auto object-cover object-top"
+                  loading="lazy"
+                />
+                <div class={`absolute top-9 right-2 text-xs font-bold px-3 py-1 rounded-full bg-gradient-to-r ${demo.color} text-white shadow`}>
+                  Demo {i + 1}
+                </div>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="lg:w-1/2 p-8 lg:py-10 lg:pr-10 flex flex-col justify-center">
+              <div class="flex items-center gap-3 mb-3">
+                <h3 class="font-display font-bold text-2xl text-surface-dark">{demo.name}</h3>
+                <span class={`text-xs font-semibold px-3 py-1 rounded-full bg-gradient-to-r ${demo.color} text-white`}>
+                  {demo.style}
+                </span>
+              </div>
+
+              <p class="text-gray-600 leading-relaxed mb-4">{demo.description}</p>
+
+              <p class="text-sm font-semibold text-brand mb-4">
+                Ideal para: {demo.ideal}
+              </p>
+
+              <div class="flex flex-wrap gap-2 mb-6">
+                {demo.features.map((feat) => (
+                  <span class="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full">
+                    {feat}
+                  </span>
+                ))}
+              </div>
+
+              <a
+                href={demo.demoUrl}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 text-brand hover:text-brand-dark font-semibold text-sm group/link"
+              >
+                Ver Demo en Vivo
+                <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

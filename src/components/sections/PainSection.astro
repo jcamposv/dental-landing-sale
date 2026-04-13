@@ -1,0 +1,52 @@
+---
+const problems = [
+  {
+    icon: "M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z",
+    title: "Invisible en Google",
+    description: "Tus pacientes potenciales buscan \"dentista cerca de mí\" y encuentran a tu competencia, no a ti.",
+  },
+  {
+    icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+    title: "Pierdes tiempo en redes",
+    description: "Publicas en Instagram pero no tienes un lugar profesional donde tus pacientes vean tus servicios completos.",
+  },
+  {
+    icon: "M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728L5.636 5.636",
+    title: "Sin agendamiento online",
+    description: "Tus pacientes tienen que llamar o enviar mensaje para agendar. Muchos desisten antes de hacerlo.",
+  },
+  {
+    icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+    title: "Agencias cobran demasiado",
+    description: "Una agencia te cobra $1,000-$3,000 USD por algo que tarda meses. Nosotros lo hacemos en 72 horas por $295.",
+  },
+];
+---
+
+<section class="py-20 sm:py-28 bg-surface-dark text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl">
+        Si no tienes página web,
+        <span class="text-accent"> estás perdiendo pacientes</span>
+      </h2>
+      <p class="mt-4 text-gray-400 text-lg">
+        Estos son los problemas más comunes que enfrentan los dentistas sin presencia digital profesional.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6 lg:gap-8">
+      {problems.map((problem) => (
+        <div data-animate class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors">
+          <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d={problem.icon} />
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-xl mb-2">{problem.title}</h3>
+          <p class="text-gray-400 leading-relaxed">{problem.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

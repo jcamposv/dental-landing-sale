@@ -1,0 +1,59 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Escríbenos por WhatsApp",
+    description: "Cuéntanos sobre tu clínica: nombre, servicios, ubicación y qué diseño te gusta de nuestros ejemplos o si prefieres uno custom.",
+    time: "5 minutos",
+  },
+  {
+    number: "02",
+    title: "Recibe tu propuesta",
+    description: "Te enviamos un preview personalizado con tu información para que veas cómo quedará antes de pagar.",
+    time: "24 horas",
+  },
+  {
+    number: "03",
+    title: "Paga y personalizamos",
+    description: "Realizas el pago de $295 USD al recibir tu página terminada. Nosotros personalizamos todo: fotos, textos, colores.",
+    time: "48 horas",
+  },
+  {
+    number: "04",
+    title: "Tu web está lista",
+    description: "Desplegamos tu página, conectamos tu WhatsApp y te entregamos todo funcionando. Lista para recibir pacientes.",
+    time: "72 horas total",
+  },
+];
+---
+
+<section class="py-20 sm:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+      <div class="inline-flex items-center gap-2 bg-brand/10 text-brand font-semibold text-sm px-4 py-1.5 rounded-full mb-4">
+        Proceso Simple
+      </div>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-surface-dark">
+        De WhatsApp a tu página web en 4 pasos
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {steps.map((step, i) => (
+        <div data-animate class="relative">
+          <div>
+            <div class="w-16 h-16 bg-brand/10 rounded-2xl flex items-center justify-center mb-5">
+              <span class="font-display font-extrabold text-xl text-brand">{step.number}</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-surface-dark mb-2">{step.title}</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-3">{step.description}</p>
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              {step.time}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
